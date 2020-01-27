@@ -2,7 +2,7 @@ FROM node:10-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apk add --no-cache --virtual .pipeline-deps readline linux-pam \
+RUN apk add --no-cache --virtual .pipeline-deps readline linux-pam git \
   && apk add bash sudo shadow \
   && apk del .pipeline-deps
 
