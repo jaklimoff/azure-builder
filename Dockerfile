@@ -11,12 +11,12 @@ RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 LABEL "com.azure.dev.pipelines.agent.handler.node.path"="/usr/local/bin/node"
 
-npm install -g semantic-release
-npm install -g @semantic-release/gitlab
-npm install -g @semantic-release/changelog
-npm install -g @semantic-release/commit-analyzer
-npm install -g @semantic-release/exec
-npm install -g @semantic-release/git
-npm install -g @semantic-release/release-notes-generator
+RUN npm install -g semantic-release \
+    && npm install -g @semantic-release/gitlab \
+    && npm install -g @semantic-release/changelog \
+    && npm install -g @semantic-release/commit-analyzer \
+    && npm install -g @semantic-release/exec \
+    && npm install -g @semantic-release/git \
+    && npm install -g @semantic-release/release-notes-generator
 
 CMD [ "node" ]
